@@ -42,22 +42,17 @@ The d2kg integrates entities from:
 
 This is a list of indicative Competency Questions (CQs) The CQs are expressed as SPARQL queries, where the rdf prefix indicates the namespace of the core W3C RDF vocabulary, while the ba prefix indicates the namespace of the ontology.
 
-Use Case 1: Transparency/Accountability in public money/resources spend-
-ing
--CQ1: For a given organization, which are the top x economic operators/contractors
-that are recipients of awarded contracts (within a given time period)?
-A simple self-explanatory query is oriented towards the public money spending. A starting
-point would be to retrieve the top winning contractors for a given Organization.
-SELECT (?Org AS ?Contractor) (COUNT(distinct(?contract)) AS ?number of contracts)
-where {
-?contract a dvg:Award;
-epo:isCreatedBy dvgo:100054492;
-eli:date publication ?pub date;
-dvg:has sponsored ?Org;
-FILTER (?pub date ≥ ”2017 − 01 − 01” ∧ ∧xsd : date)
-} group by ?Org order by desc(?number of contracts) LIMIT x
-It provides the list of operators/contractors ranked according to the highest number of con-
-tracts awarded by the Greek Ministry Of Interior (organization id: 100054492 based on the
-Di@vgeia notation) aer 01.01.2017 (date of publication).
-e reader can identify the integration of different ontologies (epo: for E-procurement, dvg:
-for Di@vgeia, eli: for ELI ontology).
+Use Case 1: Transparency/Accountability in public money/resources spending
+
+
+CQ# | Competency Question | SPARQL
+--- | ------------------- | ------
+-CQ1 |  For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)? | `SELECT (?Org AS ?Contractor) (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?eli:date publication ?pub date;` `<br/>&nbsp;&nbsp;&nbsp;&nbsp;`FILTER (?pub date ≥ ”2017 − 01 − 01” ∧ ∧xsd : date)`}<br/>&nbsp;&nbsp;&nbsp;&nbsp;` group by ?Org order by desc(?number of contracts) LIMIT x}`<br/>`}`
+
+
+
+
+
+
+
+
