@@ -1,12 +1,12 @@
 # d2kg ontology
 d2kg-OWL: An Integrated Ontology for Knowledge Graph-based Representation of Government Decisions and Acts
 
-# d2kg scope
+##  d2kg scope
 The d2kg ontology is a unique integration of existing ontologies combined with core and controlled vocabularies developed based on EU standards. It provides a customized solution to abide by the requirements of the Greek Programme Diavgeia, extending significantly the respective Diavgeia ontology and proposing
 at the same time a solution to encode government and administrative decisions/Acts that could be universally adopted to integrate public documents produced by other EU Member States, with certain adjustments contentwise.
 
 
-# d2kg Visualization
+##  d2kg Visualization
 The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A
  graphical UML representation of the main entities and their relationships is provided below.
 
@@ -22,7 +22,7 @@ from the imported ontologies, along with additional ones for the purpose of extr
 Diavgeia decisions and Acts. The majority of data and object properties derives from the ePO and the Diavgeia
 ontology.
 
-# Reuse of Existing Resources
+##  Reuse of Existing Resources
 
 The d2kg integrates entities from:
 
@@ -38,7 +38,7 @@ The d2kg integrates entities from:
 
 - E-procurement ontology (ePO)
 
-# Use Cases
+##  Use Cases
 
 implementation is to exploit the knowledge gained through the information extraction process of our model. To effectively identify the needs of the end user of a Knowledge based system, whether it is a Knowledge Graph or the (underlying) ontology, one should focus on real applicable use cases. In this section we develop a set of use cases that could trigger onward the implementation.
 
@@ -62,7 +62,7 @@ In the same manner, one could be interested in specific information concerning P
 Moreover, one could have a specific interest in specific geographic area for certain decisions; for public land usage for instance. This could be related to location based information included in decisions/acts.
 In terms of its internal functioning, an organization could collect data on average number of specific figures for types of decisions for statistical reasons and in order to assess certain units (average number of contracts or contracts’ duration)
 
-# Competency Questions
+##  Competency Questions
 
 This is a list of indicative Competency Questions (CQs) The CQs are expressed as SPARQL queries, where the rdf prefix indicates the namespace of the core W3C RDF vocabulary, while the ba prefix indicates the namespace of the ontology.
 
