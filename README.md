@@ -44,8 +44,8 @@ implementation is to exploit the knowledge gained through the information extrac
 
 Use Case 1: Transparency/Accountability in public money/resources spending
 
-Accountability for the allocation of public money or -in general resources- at national and EU level is the driving force to develop tools for monitoring the money flow. A characteristic use case is to identify the recipient organizations-economic operators of public money. Di@vgeia, as the main repository for decisions related to the procurement procedures in Greece, is an important source of information. e related Di@vgeia Decisions/Acts can help us iden-
-tify the recipient contractors, the volume of awarded budget, the frequency of awarded contracts to specic economic operators so as to establish potential patterns in the awards or even suspicion of preferential treatment.
+Accountability for the allocation of public money or -in general resources- at national and EU level is the driving force to develop tools for monitoring the money flow. A characteristic use case is to identify the recipient organizations-economic operators of public money. Di@vgeia, as the main repository for decisions related to the procurement procedures in Greece, is an important source of information. The related Di@vgeia Decisions/Acts can help us iden-
+tify the recipient contractors, the volume of awarded budget, the frequency of awarded contracts to specific economic operators so as to establish potential patterns in the awards or even suspicion of preferential treatment.
 
 Use Case 2: Publicity in public spending
 
