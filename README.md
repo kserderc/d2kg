@@ -254,6 +254,34 @@ It has been judged appropriate to introduce specic data properties as well to 
 • SAE: This property corresponds to the Decision Type issued for taking over financial commitments at the expense of the Public Investments Program budget ( ́ΣΑΕ ́ in Greek) (rdfs:Literal);
 
 
+
+## d2kg Controlled Vocabularies
+
+Apart from the appropriate Classes, Object and Data Properties, it is signicant to introduce re-usability with regards to the terms used by the actual data incorporated via instances. This possible through the the integration of controlled vocabularies ensuring a standardized approach concerning the terms that correspond to predened values for the properties we deploy.
+
+
+### EU vocabularies
+
+The developed ontology introduces the publicly available arrangements in different formats as presented in the sub-sections that follow.
+
+### Authority tables
+
+The Authority tables 10 is the structure that provides the consistent information which is relevant for our implementation. Authority tables are used to harmonise and standardise the codes and associated labels used in various environments (web platforms, systems and applications) and to facilitate data exchanges between the institutions involved in decision-making process
+and more.
+
+#### Selection criterion type
+
+In the domain of public procurement, selection criteria are normally based on a specific le-gal framework. This table 11 provides the list of conditions that are concerned for evaluation purposes in terms of the criteria that the candidate contractos should fulfil. It is common that these form elements referred in public administration documentation. This codelist is a subset of the ESPD codelist Criterion Taxonomy 12.
+
+####  Award criterion type
+
+In public procurement, it is important to make available in a standardized manner the awardcriteria types. This is normally part of the relevant decisions concluding the procedures and announcing formally the results. It conforms to the transparency requirements with regard to public resources allocation as it concerns not only the selected contractors, but the ones not chosen following a procurement procedure, and the wider public. This is made possible through the authority table 13 with the list of rules to be taken into account for the award decisions. The initial values are those foreseen in the public procurement directives of 2014 (Directives 2014/23/EU, 2014/24/EU and 2014/25/EU) 14.
+
+#### EU Programme
+
+The EU Programme Authority Table (AT) 15 is a controlled vocabulary providing the list of programmes created and coordinated by the European Union and financially supported by the European Union or, in a few cases, by the contributions from the Member States. It has been developed specifically for the EU Budget as open linked data project. It indicates the authority code and start-use date of each concept and gives labels in all ocial EU languages. It provides
+
+
 ##  Use Cases
 
 To effectively identify the needs of the end user of a Knowledge based system, whether it is a Knowledge Graph or the (underlying) ontology, one should focus on real applicable use cases. In this section we develop a set of use cases applicable to knowledge extraction.
