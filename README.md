@@ -47,8 +47,8 @@ Use Case 1: Transparency/Accountability in public money/resources spending
 
 CQ# | Competency Question | SPARQL
 --- | ------------------- | ------
-CQ | CQ1: For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)? | ` (?Org AS ?Contractor) (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?incident rdf:type ba:Incident .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?location rdf:type ba:Location .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?disaster ba:hasRelatedIncident ?incident .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?incident ba:hasIncidentLocation ?location .`<br/>`}`<br/>`GROUP BY ?location`<br/>`ORDER BY DESC(?incidents) LIMIT 1`
-CQ1.11 |	What incidents took place during 21-Jun-2017 during natural disaster [X]? | `SELECT ?disaster ?incident ?start ?end`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?disaster rdf:type ba:NaturalDisaster .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?incident rdf:type ba:Incident .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?disaster ba:hasRelatedIncident ?incident .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?incident ba:hasIncidentStart ?start .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?incident ba:hasIncidentEnd ?end .`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`FILTER ((?start >= "2017-06-21T00:00:00.000"^^xsd:dateTime)
+CQ | CQ1: For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)? | ` (?Org AS ?Contractor) (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`eli:date publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored ?Org;`<br/>`FILTER (?pub date ≥ ”2017 − 01 − 01” ∧ ∧xsd : date)<br/>` desc(?number of contracts LIMIT x`
+
 
 
 
