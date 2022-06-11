@@ -253,12 +253,9 @@ It has been judged appropriate to introduce specic data properties as well to 
 
 • SAE: This property corresponds to the Decision Type issued for taking over financial commitments at the expense of the Public Investments Program budget ( ́ΣΑΕ ́ in Greek) (rdfs:Literal);
 
-
-
 ## d2kg Controlled Vocabularies
 
 Apart from the appropriate Classes, Object and Data Properties, it is signicant to introduce re-usability with regards to the terms used by the actual data incorporated via instances. This possible through the the integration of controlled vocabularies ensuring a standardized approach concerning the terms that correspond to predened values for the properties we deploy.
-
 
 ### EU vocabularies
 
@@ -266,21 +263,35 @@ The developed ontology introduces the publicly available arrangements in differe
 
 ### Authority tables
 
-The Authority tables 10 is the structure that provides the consistent information which is relevant for our implementation. Authority tables are used to harmonise and standardise the codes and associated labels used in various environments (web platforms, systems and applications) and to facilitate data exchanges between the institutions involved in decision-making process
-and more.
+The Authority tables (https://op.europa.eu/en/web/eu-vocabularies/authority-tables) is the structure that provides the consistent information which is relevant for our implementation. Authority tables are used to harmonise and standardise the codes and associated labels used in various environments (web platforms, systems and applications) and to facilitate data exchanges between the institutions involved in decision-making process and more.
 
 #### Selection criterion type
 
-In the domain of public procurement, selection criteria are normally based on a specific le-gal framework. This table 11 provides the list of conditions that are concerned for evaluation purposes in terms of the criteria that the candidate contractos should fulfil. It is common that these form elements referred in public administration documentation. This codelist is a subset of the ESPD codelist Criterion Taxonomy 12.
+In the domain of public procurement, selection criteria are normally based on a specific le-gal framework. This table (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/selection-criterion) provides the list of conditions that are concerned for evaluation purposes in terms of the criteria that the candidate contractos should fulfil. It is common that these form elements referred in public administration documentation. This codelist is a subset of the ESPD codelist Criterion Taxonomy (https://docs.peppol.eu/pracc/espd/codelist/CriteriaTypeCode/).
 
 ####  Award criterion type
 
-In public procurement, it is important to make available in a standardized manner the awardcriteria types. This is normally part of the relevant decisions concluding the procedures and announcing formally the results. It conforms to the transparency requirements with regard to public resources allocation as it concerns not only the selected contractors, but the ones not chosen following a procurement procedure, and the wider public. This is made possible through the authority table 13 with the list of rules to be taken into account for the award decisions. The initial values are those foreseen in the public procurement directives of 2014 (Directives 2014/23/EU, 2014/24/EU and 2014/25/EU) 14.
+In public procurement, it is important to make available in a standardized manner the awardcriteria types. This is normally part of the relevant decisions concluding the procedures and announcing formally the results. It conforms to the) transparency requirements with regard to public resources allocation as it concerns not only the selected contractors, but the ones not chosen following a procurement procedure, and the wider public. This is made possible through the authority table (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/award-criterion-type with the list of rules to be taken into account for the award decisions. The initial values are those foreseen in the public procurement directives of 2014 (Directives 2014/23/EU, 2014/24/EU and 2014/25/EU) (https://eur-lex.europa.eu/oj/direct-access.html).
 
 #### EU Programme
 
-The EU Programme Authority Table (AT) 15 is a controlled vocabulary providing the list of programmes created and coordinated by the European Union and financially supported by the European Union or, in a few cases, by the contributions from the Member States. It has been developed specifically for the EU Budget as open linked data project. It indicates the authority code and start-use date of each concept and gives labels in all ocial EU languages. It provides
+The EU Programme Authority Table (AT) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/eu-programme) is a controlled vocabulary providing the list of programmes created and coordinated by the European Union and financially supported by the European Union or, in a few cases, by the contributions from the Member States. It has been developed specifically for the EU Budget as open linked data project. It indicates the authority code and start-use date of each concept and gives labels in all ocial EU languages. It provides useful insights when used in the context of an ontology to identify sources of funding for instance.
 
+#### Main Activity
+
+A list of values (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/main-activity) to classify the main activities of the buyers. The codes associated with contracting authorities are derived from the top level of the Classification of the functions of the government (COFOG) from the United Nations Statistics Division (https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Classification_of_the_functions_of_government_(COFOG)). The codes associated with contracting entities are derived from sectors explicitly falling within the sectoral directive (2014/25/EU Art. 8 - Art. 14) (https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http://publications.europa.eu/resource/authority/legal-basis/32014L0025l)
+
+#### Procurement Procedure type
+
+This set (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/procurement-procedure-type) identifies the procurement type selected (open, close, competitive dialogue etc), providing significant information on the procedure requirements to the candidate contractors.
+
+### Taxonomies
+
+A taxonomy 21 is a controlled vocabulary in which all the terms belong to a single hierarchical structure and have parent/child or broader/narrower relationships to other terms, sometimes referred to as a ‘tree’.
+
+### CPV
+
+To make public procurement more transparent and ecient, in 1993 the European Commission drafted the Common Procurement Vocabulary (CPV) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/cpv). The Common Procurement Vocabulary (CPV) establishes a single classification system for public procurement aimed at stan
 
 ##  Use Cases
 
