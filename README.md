@@ -7,19 +7,12 @@ at the same time a solution to encode government and administrative decisions/Ac
 
 
 ##  d2kg Visualization
-The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A
- graphical UML representation of the main entities and their relationships is provided below.
+The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A graphical UML representation of the main entities and their relationships is provided below.
 
 ![d2kg](https://user-images.githubusercontent.com/62211813/173181649-a65b2553-4c3d-4c1f-9d27-520edd325057.png)
 
-At the level of the main ontologies and vocabularies, the ISA core vocabularies are shown in green, the ePO in
-orange and the main classes of the Diavgeia ontology in grey, whereas the controlled vocabularies in blue. The
-blue continuous lines show existing connections between different classes via their properties, whereas the pur-
-ple non-continuous lines indicate potential new connections that can be established with the re-use of existing
-properties. For instance, the property ’hasProcurementValue’ can connect a Diavgeia decision of type dvg:Award
-with the class epo:Value. It is evident that the focus is on the re-use of existing classes, object and data properties
-from the imported ontologies, along with additional ones for the purpose of extracting valuable information from
-Diavgeia decisions and Acts. The majority of data and object properties derives from the ePO and the Diavgeia
+At the level of the main ontologies and vocabularies, the ISA core vocabularies are shown in green, the ePO in orange and the main classes of the Diavgeia ontology in grey, whereas the controlled vocabularies in blue. The blue continuous lines show existing connections between different classes via their properties, whereas the purple non-continuous lines indicate potential new connections that can be established with the re-use of existing
+properties. For instance, the property ’hasProcurementValue’ can connect a Diavgeia decision of type dvg:Award with the class epo:Value. It is evident that the focus is on the re-use of existing classes, object and data properties from the imported ontologies, along with additional ones for the purpose of extracting valuable information from Diavgeia decisions and Acts. The majority of data and object properties derives from the ePO and the Diavgeia
 ontology.
 
 ##  Reuse of Existing Resources
@@ -38,9 +31,53 @@ The d2kg integrates entities from:
 
 - E-procurement ontology (ePO)
 
+## d2kg Classes
+
+The ontology is built on re-used classes of the imported individual ontologies, as well as additional ones. We will describe the commonly deployed per ontology below. 
+
+### Diavgeia ontology
+
+Overall, all classes of Di@vgeia are integrated in the newly developed ontology. These are extensively analysed in the corresponding repository of the DiavgeiaRedefined Project https://github.com/ThemisB/diavgeiaRedefined/tree/master/rdf. 
+
+The basic ones are listed below:
+
+• LegalResource: the core Class representing the Decisions and Acts of Diavgeia based on their formal classification according to the Diavgeia Programme;
+
+• Expense: the most common entity used to represent financial transactions4; it is used by the following decision types following the notation of the Di@vgeia Ontology: Award, Contract, DeclarationSummary, DonationGrant, ExpenditureApproval, OwnershipTransferOfAssets, WorkAssignmentSupplyServicesStudies, PaymentFinalisation, GeneralSpecialSecretaryMonocraticBody.
+
+All the above involve a nancial aspect (relevant to monetary transaction) which implies the need for a separate class to encode accompanying data such as the involved parties, amount etc.
+
+### ePO ontology
+
+A summarization of the main entities (ref: https://github.com/OP-TED/ePO/tree/v2.0.1/v2.0.1):
+
+• Agent: A person, an organization, or a system that act in procurement or have the power to act in procurement; This is the respective class from the FOAF ontology, as integrated in ePO;
+
+• Amount: to represent amounts related to procurement procedures;;
+
+• ContactPoint: Details used to reach an organisation: a role, email address, telephone number, etc. This is the respective class from schema.org integrated in the ePO. It can prove very useful in the current implementation, as the Decisions/Acts normally have a Contact Person (Point) to be reached by the citizens;
+
+• Contract: A voluntary, deliberate, and legally binding agreement between two or more competent parties; This class can be employed for contractual agreements among different organizations or between organizations and individuals;
+
+• Fund: A financial resource used to support the procurement. In the context of EU, funds can be divided into programmes, actions and projects. Examples of EU funds are: the European Structural and Investment Funds, European Social Fund (ESF), the Connecting Europe Facility (CEF) programme, or the ISA2 programme and its actions. Funds may change between the lot and the contract, for example in the case of an emergency crisis, a contract mayfinanced by a budget that was not foreseen in the call;
+
+• Lot: A qualitative, quantitative or strategic subdivision of the goods, services or works to be procured, allowing the award of one or more contracts; It refers to a common term used in public procurement.
+
+• Period: A time interval or a duration, usually consisting of a start and an end date;
+
+• Purpose: the description of the objectives related to a procurement;
+
+• Tender: Information submitted by the economic operator to specify its offer regarding one or more lots or the whole procedure, in response to the call for tender;
+
+• Tender Lot: Part of the tender that applies to the related lot;
+
+• Value: Value of an asset, normally expressed as Amount.
+
+
+
 ##  Use Cases
 
-implementation is to exploit the knowledge gained through the information extraction process of our model. To effectively identify the needs of the end user of a Knowledge based system, whether it is a Knowledge Graph or the (underlying) ontology, one should focus on real applicable use cases. In this section we develop a set of use cases that could trigger onward the implementation.
+To effectively identify the needs of the end user of a Knowledge based system, whether it is a Knowledge Graph or the (underlying) ontology, one should focus on real applicable use cases. In this section we develop a set of use cases applicable to knowledge extraction.
 
 Use Case 1: Transparency/Accountability in public money/resources spending
 
@@ -66,13 +103,13 @@ In terms of its internal functioning, an organization could collect data on aver
 
 This is a list of indicative Competency Questions (CQs) The CQs are expressed as SPARQL queries, where the rdf prefix indicates the namespace of the core W3C RDF vocabulary, while the ba prefix indicates the namespace of the ontology.
 
-Use Case 1: Transparency/Accountability in public money/resources spending
 
 
-CQ#| Competency Question |      SPARQL
+UC#| Competency Question |      SPARQL
 ---| ------------------- | ----------------------
-CQ1| For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)?|`SELECT (?Org AS ?Contractor (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`eli:date publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored ?Org;`<br/>`FILTER (?pub date ≥ ”2017−01−01” ∧ ∧xsd:date)}`<br/>`group by ?Org' 'order by desc(?number of contracts) LIMIT x`
-CQ2 |For a given organization, which are the awarded contracts to a specificc economic operator (within a given time period)|`SELECT distinct ?contract (?Amount AS ?Awarded Amount) ?URL ?KIMDIS`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:hasAwardedValue ?Awarded Value;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`eli:date_publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:hasURL ?URL;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored〈id〉`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`d2kg:KIMDIS ?KIMDIS;〉`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?Awarded Value epo:hasOverallAmount ?OverallAmount.`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?OverallAmount epo:hasAmountValue ?Amount.`<br/>`FILTER (?pub date ≥ ”2017−01−01” ∧∧xsd:date)}`<br/>`group by ?Org' 'order by desc(?number of contracts) LIMIT x`
+UC1| CQ1: For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)?|`SELECT (?Org AS ?Contractor (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`where {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`eli:date publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored ?Org;`<br/>`FILTER (?pub date ≥ ”2017−01−01” ∧ ∧xsd:date)}`<br/>`group by ?Org`<br/>` order by desc(?number of contracts) LIMIT x`
+UC2| CQ3: Which is the full information for the Contact Point for a decision/act (the designated organizational units/person)?|`SELECT distinct ?doc ?URL ?full_name ?Email ?Telephone`<br/>`where {`<br/>&nbsp;&nbsp;&nbsp;`?doc;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:hasURL ?URL;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`eli:responsibility_of_agent ?Contact_Point.`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`?Contact_Point epo:hasFullName ?full_name;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:hasEmail ?Email;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:hasTelephone ?Telephone.`<br/>
+UC3| CCQ3: For a given organization, what is the number of persons appointed (within a given period of time)?|`SELECT (COUNT(distinct(?doc)) AS ?number_docs) ?Staff_Category ?Staff ?Post `<br/>`where {`<br/>&nbsp;&nbsp;&nbsp;`?doc a dvg:Appointment;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`eeli:date_publication ?pub_date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`d2kg:staff ?Staff;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`?Staff d2kg:staffCategory ?Staff_Category;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`d2kg:AppointedIn ?Post;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`person:birthName ?birthName;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:appointedBy dvgo:99221922;`<br/>`FILTER (?pub date ⩾ ”2015 − 01 − 01” ∧∧xsd : date)`<br/>`group by ?Staff_Category ?Staff ?Post'<br/> order by desc(?number_docs)`
 
 
 
