@@ -5,7 +5,6 @@ d2kg-OWL: An Integrated Ontology for Knowledge Graph-based Representation of Gov
 The d2kg ontology is a unique integration of existing ontologies combined with core and controlled vocabularies developed based on EU standards. It provides a customized solution to abide by the requirements of the Greek Programme Diavgeia, extending significantly the respective Diavgeia ontology and proposing
 at the same time a solution to encode government and administrative decisions/Acts that could be universally adopted to integrate public documents produced by other EU Member States, with certain adjustments contentwise.
 
-
 ##  d2kg Visualization
 The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A graphical UML representation of the main entities and their relationships is provided below.
 
@@ -37,7 +36,7 @@ The ontology is built on re-used classes of the imported individual ontologies, 
 
 ### Diavgeia ontology
 
-Overall, all classes of Di@vgeia are integrated in the newly developed ontology. These are extensively analysed in the corresponding repository of the DiavgeiaRedefined Project https://github.com/ThemisB/diavgeiaRedefined/tree/master/rdf. 
+Overall, all classes of Diavgeia are integrated in the newly developed ontology. These are extensively analysed in the corresponding repository of the DiavgeiaRedefined Project https://github.com/ThemisB/diavgeiaRedefined/tree/master/rdf. 
 
 The basic ones are listed below:
 
@@ -83,19 +82,18 @@ Core Public Organization vocabulary
 
 • Public Organization: a Class that represents the Organization. One Organization may comprise several sub-organizations and any organization may have one or more organizational units. Each of these is described using the same properties and relationships; In the context of this implementation, we use this class for Decisions/Acts issued by Public Administration (this could be interchangeably used with the class Organization of the Organization Ontology in a wider context; In the RDF release of the CPOV, hasUnit is bound to org:hasUnit and unitOf is bound to org:unitOf).
 
-Core Person vocabulary
+#### Core Person vocabulary
 
 • Person: An individual person who may be dead or alive, but not imaginary. It is that restriction that makes person: Person a sub class of both foaf:Person and schema:Person which both cover imaginary characters as well as real people.
 
 
-Core Location vocabulary
+#### Core Location vocabulary
 
 • Address: the Address class is defined in the Location Core Vocabulary. Its properties are closely bound to the INSPIRE data model for addresses. In particular, it separates out building names and numbers from the name of the thoroughfare. this is in contrast to VCard which conflates them into ’street address.’ The Location Core Vocabulary does,however, borrow the fullAddress property from VCard as a means of providing the full text of the address as a literal;
 
 • Location: dcterms:Location class fully represents the ISA Programme Location Core Vocabulary class of Location.
 
-
-## d2kg Object properties
+## d2kg object properties
 
 The most important object properties per ontology introduced are:
 
@@ -145,32 +143,115 @@ The most important object properties per ontology introduced are:
 
 • includes: refers to tender lots under a tender/inverse of property ’isIncludedIn’;
 
-• isSignedBy: identies the Signer/inverse of ’is signatory part of’.
+• isSignedBy: identifies the Signer/inverse of ’is signatory part of’.
 
-Organization ontology
+### Organization ontology
 
 • hasSubOrganization: to represent hierarchical structures within an Organization, im- portant to identify the organizational units issuing a decision;
 • holds: Indicates a Post held by some Agent/inverse of ’heldBy’;
 
 • postIn: Indicates the Organization in which the Post exists.
 
-## e-Government Core Vocabularies
+###  e-Government Core Vocabularies
 
-Core Location ontology
+#### Core Location ontology
 
 • location: The location property links any resource to the Location Class. Asserting thelocation relationship implies only that the domain has some connection to a Location in time or space. It does not imply that the resource is necessarily at that location at the time when the assertion is made.
 
-##  New Object Properties
+###  New object Properties
 
-Apart from the integrated properties from standard ontologies it is noteworthy to create new ones to meet requirements not covered by existing properties. The necessity for these new properties comes from the specific type of data that can be retrieved from Diavgeia Decisions/Acts and constitute an initial set that can be further extended depending on the specificities of Di@vgeia Decisions/Acts. ey mostly represent relationships between an Organization
+Apart from the integrated properties from standard ontologies it is noteworthy to create new ones to meet requirements not covered by existing properties. The necessity for these new properties comes from the specific type of data that can be retrieved from Diavgeia Decisions/Acts and constitute an initial set that can be further extended depending on the specificities of Di@vgeia Decisions/Acts. They mostly represent relationships between an Organization
 and another entity (Organization or Individual/Person).
 
 • appointedIn: expresses the relationship between the Staff/Personnel and the Post where the person/individual is appointed in an organization;
 
 • awardsTo: represents the property relationship between the Funding organization and the recipient organization/inverse of ’isAwardedBy’;
 
-• grantsTo: used to dene the relationship between an Organization Sponsor and the Sponsored Organization inverse of ’receivesGrantsBy’;
+• grantsTo: used to define the relationship between an Organization Sponsor and the Sponsored Organization inverse of ’receivesGrantsBy’;
 
+• receivesGrantOf: defines the type of asset (e.g. amount) one Organization receives;
+
+• staff: represents the Personnel of an Organization; relates an Organization to the Per-sonnel in Appointment Decisions;
+
+• transfer: represents ”We transfer(assets, building)” textual pattern used in Diavgeia docs. It can be used for transfers of assets between entities.
+
+## d2kg data properties
+
+The most characteristic data properties deployed are listed per ontology (with their range inparentheses).
+
+Di@vgeia ontology Most of the data properties of Di@vgeia are imported. A set of the com-monly used are referred below:
+
+• afm: Tax Registration Number/VAT registration number (xsd:string);
+
+• afm type: Tax Registration Number type;
+
+• iun: the internet uploading number, unique identifier for Diavgeia docs (xsd:string);
+
+• fek issue: the issue of the Government gazette classified according to the Greek Public Administration notation for this type of docs (data range:Α, Α.Α.Π., Α.Ε.∆., Α.Π.Σ.,Α.Σ.Ε.Π., Β, Γ, ∆, ∆.∆.Σ., Ε.Β.Ι, Ν.Π.∆.∆., Ο.Π.Κ., ΠΑΡΑΡΤΗΜΑ );
+
+• fek number: the number of the Government gazee (xsd:string).
+
+### ePO ontology
+
+• amountValue: The numeric value of the amount, including decimals (xsd:decimal);
+
+• hasAwardDecisionDate: The official date of the award decision (xsd:date);
+
+• hasBirthFamilyName: the birth family name of a person (rdfs:Literal);
+
+ hasCityName: the name of a city, town or village (rdfs:Literal);
+ 
+• hasEndDate: The date on which this period ends(xsd:date);
+
+• hasEntryintoForceDate: The date on which the contract enters into force. is is gener-ally the date on which the fulfillment of the contract begins (xsd:date);
+
+• hasFullName: the full name of a person (rdfs:Literal);
+
+• hasGivenName: the given name of a person (rdfs:Literal);
+
+• hasOpeningDateTime: Date and time for the opening of tenders (xsd:dateTime);
+
+• hasPublicationDate: The date when a record is made publicly available (xsd:date);
+
+• hasReceiptDeadline: The time limit for receiving submissions. This is the deadline by which the buyer must receive submissions (e.g. tenders, requests to participate, clarifications, etc.) and is not the time at which the information is submitted by the economic operator (xsd:dateTime);
+
+• hasReceiptExpressionsDeadline: Time limit for receipt of expressions of interest(xsd:dateTime);
+
+• hasStartDate: The date on which this period begins(xsd:date);
+
+• hasTitle: A short self-descriptive name of the instance of the concept(rdfs:Literal);
+
+• hasUrl: The identifier of a resource (xsd:anyURI);
+
+• hasVATPercentage: VAT percentage (xsd:decimal).
+
+### Organization vocabulary
+
+• birthName: the complete birth name of a person (rdfs:Literal);
+
+• location: Gives a location description for a person within the organization, for example a Mail Stop for internal posting purposes; integrated, but of use only in specific conditions, as apparent by its definition (rdfs:Literal).
+
+### e-Government Core Vocabularies
+
+#### Core Location vocabulary
+
+• addressArea: The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit. This would typically be part of a city, a neighbourhood or village. The domain of locn:addressArea is locn:Address (rdfs:Literal);
+
+• fullAddress: The complete address written as a string, with or without formating. The domain of locn:fullAddress is locn:Address (rdfs:Literal);
+
+• postCode: The post code (a.k.a postal code, zip code etc.). Post codes are common elements in many countries’ postal address systems. The domain of locn:postCode isblocn:Address (rdfs:Literal).
+
+###  New data Properties
+
+It has been judged appropriate to introduce specic data properties as well to accommodate valuable and sometimes critical information encoded in certain decisions, as follows:
+
+• kIMDIS: This stands for the central electronic register of public contracts reference (ΚΗΜ∆ΗΣ ́ in Greek) (rdfs:Literal);
+
+• staffCategory: The Staff Category of the personnel (rdfs:Literal);
+
+• staffRank: The Staff Rank of the personnel (data range: corresponding to four different ranks: Α, Β, Γ, ∆ );
+
+• SAE: This property corresponds to the Decision Type issued for taking over financial commitments at the expense of the Public Investments Program budget ( ́ΣΑΕ ́ in Greek) (rdfs:Literal);
 
 
 ##  Use Cases
