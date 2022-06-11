@@ -8,7 +8,7 @@ at the same time a solution to encode government and administrative decisions/Ac
 
 # d2kg Visualization
 The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A
- graphical UML representation of the main entities and their relationships is provided in Figur below.
+ graphical UML representation of the main entities and their relationships is provided below.
 
 ![d2kg](https://user-images.githubusercontent.com/62211813/173181649-a65b2553-4c3d-4c1f-9d27-520edd325057.png)
 
@@ -47,7 +47,7 @@ Use Case 1: Transparency/Accountability in public money/resources spending
 
 CQ# | Competency Question | SPARQL
 --- | ------------------- | ------
-CQ | CQ1: For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)? | `SELECT (?Org AS ?Contractor (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`eli:date publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored ?Org;`<br/>`FILTER (?pub date ≥ ”2017 − 01 − 01” ∧ ∧xsd : date){`<br/>`group by ?Org' 'order by desc(?number of contracts) LIMIT x`
+CQ | CQ1: For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)? | `SELECT (?Org AS ?Contractor (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`eli:date publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored ?Org;`<br/>`FILTER (?pub date ≥ ”2017 − 01 − 01” ∧ ∧xsd : date){`<br/>`group by ?Org' 'order by desc(?number of contracts) LIMIT x`
 
 
 
