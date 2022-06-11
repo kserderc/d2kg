@@ -45,7 +45,7 @@ The basic ones are listed below:
 
 • Expense: the most common entity used to represent financial transactions4; it is used by the following decision types following the notation of the Di@vgeia Ontology: Award, Contract, DeclarationSummary, DonationGrant, ExpenditureApproval, OwnershipTransferOfAssets, WorkAssignmentSupplyServicesStudies, PaymentFinalisation, GeneralSpecialSecretaryMonocraticBody.
 
-All the above involve a nancial aspect (relevant to monetary transaction) which implies the need for a separate class to encode accompanying data such as the involved parties, amount etc.
+All the above involve a financial aspect (relevant to monetary transaction) which implies the need for a separate class to encode accompanying data such as the involved parties, amount etc.
 
 ### ePO ontology
 
@@ -72,6 +72,104 @@ A summarization of the main entities (ref: https://github.com/OP-TED/ePO/tree/v2
 • Tender Lot: Part of the tender that applies to the related lot;
 
 • Value: Value of an asset, normally expressed as Amount.
+
+### e-Government Core Vocabularies
+
+(ref: https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/e-government-core-vocabularies/release/27052019)
+
+Core Public Organization vocabulary
+
+• Contact Point: A class representing a point of contact for the organization. The Core Public Organization Vocabulary denes properties for telephone number, e-mail address and opening hours although it is noteworthy that the class is based on schema.org’s Contact Point class that has additional properties that some implementations may find useful;
+
+• Public Organization: a Class that represents the Organization. One Organization may comprise several sub-organizations and any organization may have one or more organizational units. Each of these is described using the same properties and relationships; In the context of this implementation, we use this class for Decisions/Acts issued by Public Administration (this could be interchangeably used with the class Organization of the Organization Ontology in a wider context; In the RDF release of the CPOV, hasUnit is bound to org:hasUnit and unitOf is bound to org:unitOf).
+
+Core Person vocabulary
+
+• Person: An individual person who may be dead or alive, but not imaginary. It is that restriction that makes person: Person a sub class of both foaf:Person and schema:Person which both cover imaginary characters as well as real people.
+
+
+Core Location vocabulary
+
+• Address: the Address class is defined in the Location Core Vocabulary. Its properties are closely bound to the INSPIRE data model for addresses. In particular, it separates out building names and numbers from the name of the thoroughfare. this is in contrast to VCard which conflates them into ’street address.’ The Location Core Vocabulary does,however, borrow the fullAddress property from VCard as a means of providing the full text of the address as a literal;
+
+• Location: dcterms:Location class fully represents the ISA Programme Location Core Vocabulary class of Location.
+
+
+## d2kg Object properties
+
+The most important object properties per ontology introduced are:
+
+### Diavgeia ontology
+
+• has expense: has expense links a certain decision type with an Expense;
+
+• has expense with kae: links one of the corresponding Decision types (CommisionWarrant, Undertaking) with an Class ExpenseWithKae;
+
+• signed by: signed by links a Legal Resource (decision type) with a Signer; there is an equivalent property in ePO ontology as well.
+
+### ePO ontology
+
+• actsOnBehalfOf: to identify usually the Signer, the person who has is legally designated to represent an organization/ inverse of ’delegatesAncillaryActivitiesOn’;
+
+• appointedBy: can be used in acts related to appointment of new staff to organizations/inverse of ’appoints’;
+
+• funds: represents the relationship between the Funding source (source of funding,i.e. European or National Budget) and the recipient organization. Funds may change between the lot and the contract, for example in the case of an emergency crisis, a contract maybe financed by a budget that was not foreseen in the call/inverse of ’is funded by’;
+
+• hasAwardCriterionType: the determining criterion for awarding the tender to a candidate contractor (lowest price, cost, quality); important to be communicated to candidate contractors.
+
+• hasDuration: the duration of a contract;
+
+• hasProcurementValue: used in the context of Contractual binding agreements; It refers to the initially set value at the time the tender is announced. At contract time, this procurement value may be different from the Procurement Value of a Lot or a Procedure that was announced. Associated with the Class Value
+
+• hasAwardedEstimatedValue: can be used when a procurement procedure is launched, e.g. a tender, to notify on the estimated value, available amount of the contract to be procured (this can be higher than the actual contracted amount on the basis of received contractors’ quotations);
+
+• hasAwardedValue: the value of the procurement provided by the Award Decision, i.e. the actual value awarded to the contractor when the procurement is concluded;
+
+• hasSelectionCriterionType: serving as the property to highlight the legal requirements for a contractor to take part in the procurement;
+
+• hasOpeningPlace: it provides information on the location where the quotations are opened and evaluated; the place where the tenders will be publicly opened. Important for the sake of transparency to be widely communicated, since candidate contractors can be present during the opening of the tenders (range: Address);
+
+• hasOverallAmount: relates the classes Value and Amount to link the generic concept of Value with a corresponding Amount when the asset is expressed as monetary value;
+
+• hasMainActivityType: provides the main activities of the buyers/ the purchasing bodies/associated with contracting authorities;
+
+• hasMainClassification: provides the Common Procurement Vocabulary (CPV) values/can substitute/be used interchangeably with the data property dvg:cpv of the Di@vgeia ontology;
+
+• hasLegalBasis: the legal acts relevant (used normally as reference in the decisions/acts) for a given public procurement procedure;
+
+• hasPostalAddress: the postal address predicate connecting the entity Location with theclass Address (to further be used to encode the actual address as data property of the Address Class);
+
+• hasProcedureType: related to the activities leading to the conclusion of public contracts used in public procurement according to the legislation- identifies the type of procedure: ’Open’, ’Competitive Dialogue’, ’Closed’ etc.;
+
+• isCreatedBy: to identify the Issuing Organization (creator) of a Document (Decision/Act in this context);
+
+• includes: refers to tender lots under a tender/inverse of property ’isIncludedIn’;
+
+• isSignedBy: identies the Signer/inverse of ’is signatory part of’.
+
+Organization ontology
+
+• hasSubOrganization: to represent hierarchical structures within an Organization, im- portant to identify the organizational units issuing a decision;
+• holds: Indicates a Post held by some Agent/inverse of ’heldBy’;
+
+• postIn: Indicates the Organization in which the Post exists.
+
+## e-Government Core Vocabularies
+
+Core Location ontology
+
+• location: The location property links any resource to the Location Class. Asserting thelocation relationship implies only that the domain has some connection to a Location in time or space. It does not imply that the resource is necessarily at that location at the time when the assertion is made.
+
+##  New Object Properties
+
+Apart from the integrated properties from standard ontologies it is noteworthy to create new ones to meet requirements not covered by existing properties. The necessity for these new properties comes from the specific type of data that can be retrieved from Diavgeia Decisions/Acts and constitute an initial set that can be further extended depending on the specificities of Di@vgeia Decisions/Acts. ey mostly represent relationships between an Organization
+and another entity (Organization or Individual/Person).
+
+• appointedIn: expresses the relationship between the Staff/Personnel and the Post where the person/individual is appointed in an organization;
+
+• awardsTo: represents the property relationship between the Funding organization and the recipient organization/inverse of ’isAwardedBy’;
+
+• grantsTo: used to dene the relationship between an Organization Sponsor and the Sponsored Organization inverse of ’receivesGrantsBy’;
 
 
 
