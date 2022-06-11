@@ -47,7 +47,7 @@ Use Case 1: Transparency/Accountability in public money/resources spending
 
 CQ# | Competency Question | SPARQL
 --- | ------------------- | ------
-CQ | CQ1: For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)? | `SELECT (?Org AS ?Contractor (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`eli:date publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored ?Org;`<br/>`FILTER (?pub date ≥ ”2017 − 01 − 01” ∧ ∧xsd : date)`<br/>`group by ?Org' 'order by desc(?number of contracts) LIMIT x`
+CQ | CQ1: For a given organization, which are the top x economic operators/contractors that are recipients of awarded contracts (within a given time period)? | `SELECT (?Org AS ?Contractor (COUNT(distinct(?contract)) AS ?number of contracts)`<br/>`WHERE {`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`?contract a dvg:Award;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:isCreatedBy dvgo:100054492;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`eli:date publication ?pub date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`dvg:has sponsored ?Org;`<br/>`FILTER (?pub date ≥ ”2017 − 01 − 01” ∧ ∧xsd : date){`<br/>`group by ?Org' 'order by desc(?number of contracts) LIMIT x`
 
 
 
