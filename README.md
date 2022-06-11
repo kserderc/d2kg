@@ -54,7 +54,7 @@ Essential piece of information consists of type of procurement procedure, i.e. o
 
 Use Case 3: Efficiency of the decision-making processes 
 
-In decision-making processes knowledge is the foremost element that contributes to productive results. If we are interested in nancial transactions, we could further orientate our search accordingly.
+In decision-making processes knowledge is the foremost element that contributes to productive results. If we are interested in financial transactions, we could further orientate our search accordingly.
 
 Thus, to obtain an overview of public resources allocation one could be oriented towards cumulative information. To elaborate on critical financial information, the available data can be further broken down to actual budget categories so as to identify where public money is spent, i.e. to which kind of goods, works, equipment, consumables, services etc. This can be done through retrieving related Di@vgeia Award Decisions in order to identify the type of
 procurement via the Common Procurement Vocabulary (CPV) values.
