@@ -255,7 +255,7 @@ It has been judged appropriate to introduce specic data properties as well to 
 
 ## d2kg Controlled Vocabularies
 
-Apart from the appropriate Classes, Object and Data Properties, it is signicant to introduce re-usability with regards to the terms used by the actual data incorporated via instances. This possible through the the integration of controlled vocabularies ensuring a standardized approach concerning the terms that correspond to predened values for the properties we deploy.
+Apart from the appropriate classes, object and data Properties, it is significant to introduce re-usability with regards to the terms used by the actual data incorporated via instances. This possible through the the integration of controlled vocabularies ensuring a standardized approach concerning the terms that correspond to predefined values for the properties we deploy.
 
 ### EU vocabularies
 
@@ -275,7 +275,7 @@ In public procurement, it is important to make available in a standardized manne
 
 #### EU Programme
 
-The EU Programme Authority Table (AT) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/eu-programme) is a controlled vocabulary providing the list of programmes created and coordinated by the European Union and financially supported by the European Union or, in a few cases, by the contributions from the Member States. It has been developed specifically for the EU Budget as open linked data project. It indicates the authority code and start-use date of each concept and gives labels in all ocial EU languages. It provides useful insights when used in the context of an ontology to identify sources of funding for instance.
+The EU Programme Authority Table (AT) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/eu-programme) is a controlled vocabulary providing the list of programmes created and coordinated by the European Union and financially supported by the European Union or, in a few cases, by the contributions from the Member States. It has been developed specifically for the EU Budget as open linked data project. It indicates the authority code and start-use date of each concept and gives labels in all official EU languages. It provides useful insights when used in the context of an ontology to identify sources of funding for instance.
 
 #### Main Activity
 
@@ -287,11 +287,11 @@ This set (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=htt
 
 ### Taxonomies
 
-A taxonomy 21 is a controlled vocabulary in which all the terms belong to a single hierarchical structure and have parent/child or broader/narrower relationships to other terms, sometimes referred to as a ‘tree’.
+A taxonomy (https://op.europa.eu/en/web/eu-vocabularies/taxonomies) is a controlled vocabulary in which all the terms belong to a single hierarchical structure and have parent/child or broader/narrower relationships to other terms, sometimes referred to as a ‘tree’.
 
 ### CPV
 
-To make public procurement more transparent and ecient, in 1993 the European Commission drafted the Common Procurement Vocabulary (CPV) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/cpv). The Common Procurement Vocabulary (CPV) establishes a single classification system for public procurement aimed at stan
+To make public procurement more transparent and efficient, in 1993 the European Commission drafted the Common Procurement Vocabulary (CPV) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/cpv). The Common Procurement Vocabulary (CPV) establishes a single classification system for public procurement aimed at stan
 
 ##  Use Cases
 
