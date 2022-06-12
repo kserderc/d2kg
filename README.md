@@ -330,6 +330,23 @@ UC2| CQ3: Which is the full information for the Contact Point for a decision/act
 UC3| CCQ3: For a given organization, what is the number of persons appointed (within a given period of time)?|`SELECT (COUNT(distinct(?doc)) AS ?number_docs) ?Staff_Category ?Staff ?Post `<br/>`where {`<br/>&nbsp;&nbsp;&nbsp;`?doc a dvg:Appointment;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`eeli:date_publication ?pub_date;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`d2kg:staff ?Staff;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`?Staff d2kg:staffCategory ?Staff_Category;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`d2kg:AppointedIn ?Post;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`person:birthName ?birthName;`<br/>&nbsp;&nbsp;&nbsp;&nbsp;`epo:appointedBy dvgo:99221922;`<br/>`FILTER (?pub date ⩾ ”2015 − 01 − 01” ∧∧xsd : date)`<br/>`group by ?Staff_Category ?Staff ?Post'<br/> order by desc(?number_docs)`
 
 
+## A Knowledge Graph representation for the Greek Programme Diavgeia
+
+The applicability of the developed d2kg ontology can be demonstrated via the deployment of Knowledge Graphs to visualize actual government decisions and acts.
+
+The developed ontology allows to produce data visualization via a Semantic Graph Database which is compliant with W3C Standards. The Diavgeia typical reference document, derived from the newly developed ontology, can be visualized in the form of a Knowledge Graph via Ontotext GraphDB. 
 
 
+![Fig 6 1_](https://user-images.githubusercontent.com/62211813/173235420-c544d290-36e4-48c0-bc17-5201bd76eb63.png)
+
+We can identify all core elements of this sample decision in focus. We can identify:
+- the corresponding decision IUN:  ́6ΤΚΕ46ΜΤΛΡ-ΙΓΕ ́;
+
+- the decision Type: ’Appointment’;
+
+- the Person appointed  ́Ανδρικοπούλου Χαρίκλεια ́
+
+- the Organization which issues the decision and appoints the Person, the Greek Ministry of Development and Investments,  ́ΥΠΟΥΡΓΕΙΟ ΑΝΑΠΤΥΞΗΣ ΚΑΙ ΕΠΕΝ∆ΥΣΕΩΝ ́ in Greek;
+
+- the Organizational Units of the Ministry:  ́ΓΕΝ. ∆/ΝΣΗ ∆ΙΟΙΚΗΤΙΚΩΝ ΥΠΗΡΕΣΙΩΝ, ∆ΙΕΥΘΥΝΣΗ ∆ΙΑΧΕΙΡΙΣΗΣ & ΑΝΑΠΤΥΞΗΣ ΑΝΘΡΩΠΙΝΟΥ ∆ΥΝΑΜΙΚΟΥ, ΤΜΗΜΑ ΚΙΝΗΤΙΚΟΤΗΤΑΣ ΥΠΑΛΛΗΛΩΝ ́ and their hierarchical structural relationship.
 
