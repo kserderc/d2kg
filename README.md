@@ -37,19 +37,19 @@ The ontology is built on re-used classes of the imported individual ontologies, 
 
 ### Diavgeia ontology
 
-Overall, all classes of Diavgeia are integrated in the newly developed ontology. These are extensively analysed in the corresponding repository of the DiavgeiaRedefined Project https://github.com/ThemisB/diavgeiaRedefined/tree/master/rdf. 
+Overall, all classes of Diavgeia are integrated in the newly developed ontology. These are extensively analysed in the corresponding repository of the DiavgeiaRedefined Project (https://github.com/ThemisB/diavgeiaRedefined/tree/master/rdf). 
 
 The basic ones are listed below:
 
 • LegalResource: the core Class representing the Decisions and Acts of Diavgeia based on their formal classification according to the Diavgeia Programme;
 
-• Expense: the most common entity used to represent financial transactions4; it is used by the following decision types following the notation of the Di@vgeia Ontology: Award, Contract, DeclarationSummary, DonationGrant, ExpenditureApproval, OwnershipTransferOfAssets, WorkAssignmentSupplyServicesStudies, PaymentFinalisation, GeneralSpecialSecretaryMonocraticBody.
+• Expense: the most common entity used to represent financial transactions; it is used by the following decision types following the notation of the Diavgeia Ontology: Award, Contract, DeclarationSummary, DonationGrant, ExpenditureApproval, OwnershipTransferOfAssets, WorkAssignmentSupplyServicesStudies, PaymentFinalisation, GeneralSpecialSecretaryMonocraticBody.
 
 All the above involve a financial aspect (relevant to monetary transaction) which implies the need for a separate class to encode accompanying data such as the involved parties, amount etc.
 
 ### ePO ontology
 
-A summarization of the main entities (ref: https://github.com/OP-TED/ePO/tree/v2.0.1/v2.0.1):
+A summarization of the main entities (https://github.com/OP-TED/ePO/tree/v2.0.1/v2.0.1):
 
 • Agent: A person, an organization, or a system that act in procurement or have the power to act in procurement; This is the respective class from the FOAF ontology, as integrated in ePO;
 
@@ -75,13 +75,13 @@ A summarization of the main entities (ref: https://github.com/OP-TED/ePO/tree/v2
 
 ### e-Government Core Vocabularies
 
-(ref: https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/e-government-core-vocabularies/release/27052019)
+(https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/e-government-core-vocabularies/release/27052019)
 
 Core Public Organization vocabulary
 
 • Contact Point: A class representing a point of contact for the organization. The Core Public Organization Vocabulary denes properties for telephone number, e-mail address and opening hours although it is noteworthy that the class is based on schema.org’s Contact Point class that has additional properties that some implementations may find useful;
 
-• Public Organization: a Class that represents the Organization. One Organization may comprise several sub-organizations and any organization may have one or more organizational units. Each of these is described using the same properties and relationships; In the context of this implementation, we use this class for Decisions/Acts issued by Public Administration (this could be interchangeably used with the class Organization of the Organization Ontology in a wider context; In the RDF release of the CPOV, hasUnit is bound to org:hasUnit and unitOf is bound to org:unitOf).
+• Public Organization: a class that represents the Organization. One Organization may comprise several sub-organizations and any organization may have one or more organizational units. Each of these is described using the same properties and relationships; In the context of this implementation, we use this class for Decisions/Acts issued by Public Administration (this could be interchangeably used with the class Organization of the Organization Ontology in a wider context; In the RDF release of the CPOV, hasUnit is bound to org:hasUnit and unitOf is bound to org:unitOf).
 
 #### Core Person vocabulary
 
@@ -188,9 +188,7 @@ Di@vgeia ontology Most of the data properties of Di@vgeia are imported. A set of
 
 • iun: the internet uploading number, unique identifier for Diavgeia docs (xsd:string);
 
-• fek issue: the issue of the Government gazette classified according to the Greek Public Administration notation for this type of docs (data range:Α, Α.Α.Π., Α.Ε.∆., Α.Π.Σ.,Α.Σ.Ε.Π., Β, Γ, ∆, ∆.∆.Σ., Ε.Β.Ι, Ν.Π.∆.∆., Ο.Π.Κ., ΠΑΡΑΡΤΗΜΑ );
-
-• fek number: the number of the Government gazee (xsd:string).
+• fek number: the number of the Government gazette (xsd:string).
 
 ### ePO ontology
 
@@ -199,12 +197,10 @@ Di@vgeia ontology Most of the data properties of Di@vgeia are imported. A set of
 • hasAwardDecisionDate: The official date of the award decision (xsd:date);
 
 • hasBirthFamilyName: the birth family name of a person (rdfs:Literal);
-
- hasCityName: the name of a city, town or village (rdfs:Literal);
  
 • hasEndDate: The date on which this period ends(xsd:date);
 
-• hasEntryintoForceDate: The date on which the contract enters into force. is is gener-ally the date on which the fulfillment of the contract begins (xsd:date);
+• hasEntryintoForceDate: The date on which the contract enters into force; it is is generally the date on which the fulfillment of the contract begins (xsd:date);
 
 • hasFullName: the full name of a person (rdfs:Literal);
 
@@ -242,9 +238,9 @@ Di@vgeia ontology Most of the data properties of Di@vgeia are imported. A set of
 
 • postCode: The post code (a.k.a postal code, zip code etc.). Post codes are common elements in many countries’ postal address systems. The domain of locn:postCode isblocn:Address (rdfs:Literal).
 
-###  New data Properties
+###  New data properties
 
-It has been judged appropriate to introduce specic data properties as well to accommodate valuable and sometimes critical information encoded in certain decisions, as follows:
+It has been judged appropriate to introduce specific data properties as well to accommodate valuable and sometimes critical information encoded in certain decisions, as follows:
 
 • kIMDIS: This stands for the central electronic register of public contracts reference (ΚΗΜ∆ΗΣ ́ in Greek) (rdfs:Literal);
 
@@ -252,7 +248,7 @@ It has been judged appropriate to introduce specic data properties as well to 
 
 • staffRank: The Staff Rank of the personnel (data range: corresponding to four different ranks: Α, Β, Γ, ∆ );
 
-• SAE: This property corresponds to the Decision Type issued for taking over financial commitments at the expense of the Public Investments Program budget ( ́ΣΑΕ ́ in Greek) (rdfs:Literal);
+• SAE: This property corresponds to the Decision Type issued for taking over financial commitments at the expense of the Public Investments Program budget ( ΣΑΕ ́ in Greek) (rdfs:Literal);
 
 ## d2kg Controlled Vocabularies
 
@@ -268,7 +264,7 @@ The Authority tables (https://op.europa.eu/en/web/eu-vocabularies/authority-tabl
 
 #### Selection criterion type
 
-In the domain of public procurement, selection criteria are normally based on a specific le-gal framework. This table (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/selection-criterion) provides the list of conditions that are concerned for evaluation purposes in terms of the criteria that the candidate contractos should fulfil. It is common that these form elements referred in public administration documentation. This codelist is a subset of the ESPD codelist Criterion Taxonomy (https://docs.peppol.eu/pracc/espd/codelist/CriteriaTypeCode/).
+In the domain of public procurement, selection criteria are normally based on a specific legal framework. This table (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/selection-criterion) provides the list of conditions that are concerned for evaluation purposes in terms of the criteria that the candidate contractos should fulfil.
 
 ####  Award criterion type
 
@@ -292,23 +288,23 @@ A taxonomy (https://op.europa.eu/en/web/eu-vocabularies/taxonomies) is a control
 
 ### CPV
 
-To make public procurement more transparent and efficient, in 1993 the European Commission drafted the Common Procurement Vocabulary (CPV) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/cpv). The Common Procurement Vocabulary (CPV) establishes a single classification system for public procurement aimed at stan
+To make public procurement more transparent and efficient, in 1993 the European Commission drafted the Common Procurement Vocabulary (CPV) (https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/cpv).
 
 ##  Use Cases
 
 To effectively identify the needs of the end user of a Knowledge based system, whether it is a Knowledge Graph or the (underlying) ontology, one should focus on real applicable use cases. In this section we develop a set of use cases applicable to knowledge extraction.
 
-Use Case 1: Transparency/Accountability in public money/resources spending
+**Use Case 1: Transparency/Accountability in public money/resources spending**
 
 Accountability for the allocation of public money or -in general resources- at national and EU level is the driving force to develop tools for monitoring the money flow. A characteristic use case is to identify the recipient organizations-economic operators of public money. Di@vgeia, as the main repository for decisions related to the procurement procedures in Greece, is an important source of information. The related Di@vgeia Decisions/Acts can help us iden-
 tify the recipient contractors, the volume of awarded budget, the frequency of awarded contracts to specific economic operators so as to establish potential patterns in the awards or even suspicion of preferential treatment.
 
-Use Case 2: Publicity in public spending
+**Use Case 2: Publicity in public spending**
 
 A use case focusing mostly on the publicity requirements related to the pre-award phase. It is necessary and legally binding in most cases through established procedures at EU and national level that contracting authorities-public organizations announce and publish the calls for tender to economic operators, citizens and third parties. A Knowledge Graph can provide an alternatively source of information for involved parties to collectively gather important info. 
 Essential piece of information consists of type of procurement procedure, i.e. open/closed tender, selection and award criteria to be fulfilled by the candidates, a potential break down in tender lots, if applicable. It is also of primary importance that public organizations can be timely and effectively reached to provide feedback on procedural issues. Thererefore, Contact Points information should be available in all possible means of communication (email/telephone/postal address/contact persons) and in this sense modelled by an underlying system (ontology).
 
-Use Case 3: Efficiency of the decision-making processes 
+**Use Case 3: Efficiency of the decision-making processes** 
 
 In decision-making processes knowledge is the foremost element that contributes to productive results. If we are interested in financial transactions, we could further orientate our search accordingly.
 
@@ -320,8 +316,7 @@ In terms of its internal functioning, an organization could collect data on aver
 
 ##  Competency Questions
 
-This is a list of indicative Competency Questions (CQs) The CQs are expressed as SPARQL queries, where the rdf prefix indicates the namespace of the core W3C RDF vocabulary, while the ba prefix indicates the namespace of the ontology.
-
+This is a list of certain indicative Competency Questions (CQs) per Use Case (UC) expressed as SPARQL queries, where the rdf prefix indicates the namespace of the core W3C RDF vocabulary, while the d2kg prefix indicates the namespace of the new ontology.
 
 
 UC#| Competency Question |      SPARQL
@@ -333,14 +328,12 @@ UC3| CCQ3: For a given organization, what is the number of persons appointed (wi
 
 ## A Knowledge Graph representation for the Greek Programme Diavgeia
 
-The applicability of the developed d2kg ontology can be demonstrated via the deployment of Knowledge Graphs to visualize actual government decisions and acts.
-
-The developed ontology allows to produce data visualization via a Semantic Graph Database which is compliant with W3C Standards. The Diavgeia typical reference document, derived from the newly developed ontology, can be visualized in the form of a Knowledge Graph via Ontotext GraphDB. 
-
+The applicability of the developed d2kg ontology can be demonstrated via Knowledge Graphs to visualize actual government decisions and acts. The developed ontology allows to produce data visualization via a Semantic Graph Database which is compliant with W3C Standards. The Diavgeia typical reference document, derived from the newly developed ontology, can be visualized in the form of a Knowledge Graph via Ontotext GraphDB. 
 
 ![Fig 6 1_](https://user-images.githubusercontent.com/62211813/173235420-c544d290-36e4-48c0-bc17-5201bd76eb63.png)
 
-We can identify all core elements of this sample decision in focus. We can identify:
+We can identify all core elements of this sample decision in focus:
+
 - the corresponding decision IUN:  ́6ΤΚΕ46ΜΤΛΡ-ΙΓΕ ́;
 
 - the decision Type: ’Appointment’;
