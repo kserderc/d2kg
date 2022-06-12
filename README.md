@@ -1,5 +1,6 @@
 # d2kg ontology
-d2kg-OWL: An Integrated Ontology for Knowledge Graph-based Representation of Government Decisions and Acts
+
+**d2kg-OWL: An Integrated Ontology for Knowledge Graph-based Representation of Government Decisions and Acts**
 
 ##  d2kg scope
 The d2kg ontology is a unique integration of existing ontologies combined with core and controlled vocabularies developed based on EU standards. It provides a customized solution to abide by the requirements of the Greek Programme Diavgeia, extending significantly the respective Diavgeia ontology and proposing
@@ -18,17 +19,17 @@ ontology.
 
 The d2kg integrates entities from:
 
-- Diavgeia ontology (DiavgeiaRedefined Project)
+- Diavgeia ontology (DiavgeiaRedefined Project) (https://github.com/ThemisB/diavgeiaRedefined/tree/master/rdf)
 
-- ELI ontology
+- ELI ontology (https://eur-lex.europa.eu/eli-register/about.html)
 
-- Greek Administrative Geography ontology
+- Greek Administrative Geography ontology (https://pergamos.lib.uoa.gr/uoa/dl/frontend/file/lib/default/data/1324504/theFile)
 
-- e-Government Core Vocabularies: Core Person Vocabulary,  Core Location Vocabulary, Core Public Organization Vocabulary
+- e-Government Core Vocabularies: Core Person Vocabulary,  Core Location Vocabulary, Core Public Organization Vocabulary (https://ec.europa.eu/isa2/solutions/core-vocabularies_en/)
 
-- W3C Organization Ontology
+- W3C Organization Ontology (https://www.w3.org/TR/vocab-org/)
 
-- E-procurement ontology (ePO)
+- E-procurement ontology (ePO) (https://github.com/OP-TED/ePO)
 
 ## d2kg Classes
 
