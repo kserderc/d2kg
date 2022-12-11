@@ -9,7 +9,6 @@ at the same time a solution to encode government and administrative decisions/Ac
 ##  d2kg Visualization
 The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A graphical UML representation of the main entities and their relationships is provided below.
 
-
 ![d2kg](https://user-images.githubusercontent.com/62211813/206919192-60dfc30b-601f-4cfa-9daf-4a402df5143b.png)
 
 At the level of the main ontologies and vocabularies, the ISA core vocabularies are shown in green, the ePO in orange and the main classes of the Diavgeia ontology in grey, whereas the controlled vocabularies in blue. The blue continuous lines show existing connections between different classes via their properties, whereas the purple non-continuous lines indicate potential new connections that can be established with the re-use of existing
