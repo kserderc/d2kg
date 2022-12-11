@@ -1,6 +1,6 @@
 # d2kg ontology
 
-**d2kg-OWL: An Integrated Ontology for Knowledge Graph-based Representation of Government Decisions and Acts**
+**d2kg: An Integrated Ontology for Knowledge Graph-based Representation of Government Decisions and Acts**
 
 ##  d2kg scope
 The d2kg ontology is a unique integration of existing ontologies combined with core and controlled vocabularies developed based on EU standards. It provides a customized solution to abide by the requirements of the Greek Programme Diavgeia, extending significantly the respective Diavgeia ontology and proposing
@@ -9,10 +9,8 @@ at the same time a solution to encode government and administrative decisions/Ac
 ##  d2kg Visualization
 The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A graphical UML representation of the main entities and their relationships is provided below.
 
-![d2kg](https://user-images.githubusercontent.com/62211813/173181649-a65b2553-4c3d-4c1f-9d27-520edd325057.png)
 
-[UML D2KG-3.pdf](https://github.com/kserderc/d2kg/files/10202787/UML.D2KG-3.pdf)
-
+![d2kg](https://user-images.githubusercontent.com/62211813/206919192-60dfc30b-601f-4cfa-9daf-4a402df5143b.png)
 
 At the level of the main ontologies and vocabularies, the ISA core vocabularies are shown in green, the ePO in orange and the main classes of the Diavgeia ontology in grey, whereas the controlled vocabularies in blue. The blue continuous lines show existing connections between different classes via their properties, whereas the purple non-continuous lines indicate potential new connections that can be established with the re-use of existing
 properties. For instance, the property ’hasProcurementValue’ can connect a Diavgeia decision of type dvg:Award with the class epo:Value. It is evident that the focus is on the re-use of existing classes, object and data properties from the imported ontologies, along with additional ones for the purpose of extracting valuable information from Diavgeia decisions and Acts. The majority of data and object properties derives from the ePO and the Diavgeia
@@ -333,17 +331,16 @@ UC3| CQ3: For a given organization, what is the number of persons appointed (wit
 
 The applicability of the developed d2kg ontology can be demonstrated via Knowledge Graphs to visualize actual government decisions and acts. The developed ontology allows to produce data visualization via a Semantic Graph Database which is compliant with W3C Standards. The Diavgeia typical reference document, derived from the newly developed ontology, can be visualized in the form of a Knowledge Graph via Ontotext GraphDB. 
 
-![Fig 6 1_](https://user-images.githubusercontent.com/62211813/173235420-c544d290-36e4-48c0-bc17-5201bd76eb63.png)
+![Fig_ex](https://user-images.githubusercontent.com/62211813/206919294-2aa7aba5-b684-41aa-b3e0-5c47d6a7205f.png)
 
-We can identify all core elements of this sample decision in focus:
-
-- the corresponding decision IUN:  ́6ΤΚΕ46ΜΤΛΡ-ΙΓΕ ́;
-
-- the decision Type: ’Appointment’;
-
-- the Person appointed  ́Ανδρικοπούλου Χαρίκλεια ́
-
-- the Organization which issues the decision and appoints the Person, the Greek Ministry of Development and Investments,  ́ΥΠΟΥΡΓΕΙΟ ΑΝΑΠΤΥΞΗΣ ΚΑΙ ΕΠΕΝ∆ΥΣΕΩΝ ́ in Greek;
-
-- the Organizational Units of the Ministry:  ́ΓΕΝ. ∆/ΝΣΗ ∆ΙΟΙΚΗΤΙΚΩΝ ΥΠΗΡΕΣΙΩΝ, ∆ΙΕΥΘΥΝΣΗ ∆ΙΑΧΕΙΡΙΣΗΣ & ΑΝΑΠΤΥΞΗΣ ΑΝΘΡΩΠΙΝΟΥ ∆ΥΝΑΜΙΚΟΥ, ΤΜΗΜΑ ΚΙΝΗΤΙΚΟΤΗΤΑΣ ΥΠΑΛΛΗΛΩΝ ́ and their hierarchical structural relationship.
-
+We can identify all core elements of this sample decision (properties with their labels). Indicatively:
+- the corresponding decision id (iun): ΄6ΤΚΕ46ΜΤΛΡ-ΙΓΕ΄ in the center;
+- the decision type: ’Appointment’- in purple on the left hand side;
+- the Organization which creates/issues the decision and appoints the Person, right next to the decision id in red:
+the ’HELLENIC MINISTRY OF DEVELOPMENT AND INVESTMENTS’( ΥΠΟΥΡΓΕΙΟ ΑΝΑΠΤΥΞΗΣ ΚΑΙ ΕΠΕΝ.
+in Greek). The object property labeled ’is created by’ is used to identify the issuing Organization;
+- the Organizational Units with their hierarchical structural relationship of the Ministry in the right hand side in
+red: ΓΕΝ. Δ/ΝΣΗ ΔΙΟΙΚΗΤΙΚΩΝ ΥΠΗΡΕ., ΔΙΕΥΘΥΝΣΗ ΔΙΑΧΕΙΡΙΣΗΣ & ΑΝΑΠΤ., ΤΜΗΜΑ ΚΙΝΗΤΙΚΟΤΗΤΑΣ
+ΥΠΑΛΛ in greek;
+- the Person appointed Andrikopoulou Charikleia (Ανδριϰοπούλου Χαρίϰλεια in greek) in red just below the
+decision id on the left side.
