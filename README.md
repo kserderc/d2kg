@@ -9,13 +9,10 @@ at the same time a solution to encode government and administrative decisions/ac
 ##  d2kg Visualization
 The integrated ontology d2kg includes the appropriate ontologies, core and controlled vocabularies. A graphical UML representation of the main entities and their relationships is provided below.
 
-![d2kg](https://user-images.githubusercontent.com/62211813/208238319-27de2df2-03d1-46f5-b14b-b75973f07bf9.png)
+![d2kg](https://user-images.githubusercontent.com/62211813/236638803-b5a065a7-9dae-4ef4-b452-1dc035b404aa.png)
 
-
-At the level of the main ontologies and vocabularies, the ISA core vocabularies are shown in green, the ePO in orange and the main classes of the Diavgeia ontology in grey, whereas the controlled vocabularies in blue. The blue continuous lines show existing connections between different classes via their properties, whereas the purple non-continuous lines indicate potential new connections that can be established with the re-use of existing
-properties. For instance, the property ’hasProcurementValue’ can connect a Diavgeia decision of type dvg:Award with the class epo:Value. It is evident that the focus is on the re-use of existing classes, object and data properties from the imported ontologies, along with additional ones for the purpose of extracting valuable information from Diavgeia decisions and Acts. The majority of data and object properties derives from the ePO and the Diavgeia
+At the level of the main ontologies and vocabularies, the ISA core vocabularies are shown in green, the ePO in orange and the Diavgeia ontology in grey, whereas the controlled vocabularies in blue. The blue continuous lines show existing object properties representing domain-range classes relationships, whereas the purple dashed lines indicate new domain-range relationships between classes established locally with the re-use of existing or new object properties and black dashed indicate inferred sub-classes. Data type properties are represented via the preceding + symbol inside a class box. The class sub-class relationship is typically depicted via a black one-directional arrow connecting the two entities, but occasionally sub-classes are contained under the class within the same box (like in the case of a characteristic one: Document). The reason for the latter is to include as much information as possible in this representation, since the ontology includes numerous entities and relationships. For instance, the property ’hasProcurementValue’ indicates a domain-range relationship between a Diavgeia decision of class type dvg:Award and the class type epo:Value, whereas we can infer that m8g:Public Organization is also a sub-class of an org:Organization. It is evident that the focus is on the re-use of existing classes, object and data properties from standard ontologies, along with additional ones for the purpose of extracting valuable information from Diavgeia decisions and acts. The majority of data and object properties derives from the ePO and the Diavgeia
 ontology.
-
 ##  Reuse of Existing Resources
 
 The d2kg integrates entities from:
